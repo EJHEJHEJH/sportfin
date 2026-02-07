@@ -623,6 +623,629 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Transaction History Section */
+        .transaction-section {
+            margin: 2rem 0;
+        }
+
+        .transaction-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .filter-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-select {
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            min-width: 140px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .transaction-table th {
+            background: var(--bg-card);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-primary);
+            position: sticky;
+            top: 0;
+        }
+
+        .transaction-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .transaction-table tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .transaction-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--accent-success);
+        }
+
+        .transaction-type-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .type-sale { background: #ef4444; color: white; }
+        .type-minority { background: #8b5cf6; color: white; }
+        .type-stadium { background: #f59e0b; color: white; }
+        .type-expansion { background: #10b981; color: white; }
+
+        .capital-structure-cell {
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .capital-structure-cell .debt-line {
+            color: var(--accent-warning);
+        }
+
+        .capital-structure-cell .equity-line {
+            color: var(--accent-secondary);
+        }
+
+        .lenders-cell {
+            font-size: 0.85rem;
+        }
+
+        .lender-tag {
+            display: inline-block;
+            background: rgba(8, 145, 178, 0.2);
+            color: #22d3ee;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            margin: 0.1rem;
+        }
+
+        /* ============================================
+           DEAL EXPLORER SECTION
+           ============================================ */
+
+        .deals-section {
+            margin: 2rem 0;
+        }
+
+        /* Filter Bar */
+        .deals-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.25rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .deals-filter-search {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-primary);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+        .deals-filter-search input {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .deals-filter-search input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Status Tabs */
+        .deals-status-tabs {
+            display: flex;
+            gap: 0.25rem;
+            background: var(--bg-primary);
+            padding: 0.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .deals-status-tab {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.85rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .deals-status-tab:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+
+        .deals-status-tab.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-dot-active { background: var(--accent-success); }
+        .status-dot-exploring { background: var(--accent-warning); }
+        .status-dot-rumored { background: var(--accent-secondary); }
+        .status-dot-closed { background: var(--text-muted); }
+
+        /* Filter Dropdowns */
+        .deals-filter-dropdowns {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .deals-filter-select {
+            padding: 0.5rem 2rem 0.5rem 0.75rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+        }
+
+        .deals-filter-select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .deals-filter-results {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Deals Grid */
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Deal Card */
+        .deal-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .deal-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .deal-card.hot {
+            border-color: var(--accent-warning);
+            border-width: 2px;
+            position: relative;
+        }
+
+        .deal-card.hot::before {
+            content: "🔥 HOT";
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            background: var(--accent-warning);
+            color: var(--bg-primary);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            letter-spacing: 0.03em;
+        }
+
+        /* Card Header */
+        .deal-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .deal-identity {
+            flex: 1;
+        }
+
+        .deal-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .deal-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .deal-badges {
+            display: flex;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        /* Valuation Banner */
+        .deal-valuation-banner {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+        }
+
+        .valuation-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .valuation-amount {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--accent-success);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .deal-type-tag {
+            margin-left: auto;
+            padding: 0.3rem 0.6rem;
+            background: var(--bg-card);
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Details Grid */
+        .deal-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .deal-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            padding: 0.5rem;
+            background: var(--bg-card);
+            border-radius: 5px;
+        }
+
+        .deal-detail-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+
+        .deal-detail-value {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Capital Structure Collapsible */
+        .deal-capital-structure,
+        .deal-timeline-section {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .deal-capital-structure summary,
+        .deal-timeline-section summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0.85rem;
+            background: var(--bg-card);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            list-style: none;
+        }
+
+        .deal-capital-structure summary::-webkit-details-marker,
+        .deal-timeline-section summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .deal-capital-structure summary span:last-child,
+        .deal-timeline-section summary span:last-child {
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary span:last-child {
+            transform: rotate(180deg);
+        }
+
+        .capital-breakdown {
+            padding: 0.85rem;
+        }
+
+        .capital-bar {
+            display: flex;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.6rem;
+        }
+
+        .capital-segment { transition: all 0.3s ease; }
+        .capital-segment.debt { background: #ef4444; }
+        .capital-segment.preferred { background: #f59e0b; }
+        .capital-segment.equity { background: #10b981; }
+
+        .capital-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        .legend-color.debt { background: #ef4444; }
+        .legend-color.preferred { background: #f59e0b; }
+        .legend-color.equity { background: #10b981; }
+
+        /* Timeline Track */
+        .timeline-track {
+            padding: 0.85rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .deal-milestone {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.35rem 0;
+            position: relative;
+        }
+
+        .deal-milestone:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: var(--border-color);
+        }
+
+        .milestone-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .deal-milestone.completed .milestone-marker { background: var(--accent-success); }
+        .deal-milestone.active .milestone-marker {
+            background: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        .deal-milestone.upcoming .milestone-marker {
+            background: transparent;
+            border: 2px solid var(--text-muted);
+        }
+
+        .milestone-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .milestone-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .milestone-event {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .deal-milestone.completed .milestone-event { color: var(--text-secondary); }
+
+        .milestone-progress {
+            font-size: 0.7rem;
+            color: var(--accent-success);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Participants (Advisors/Lenders) */
+        .deal-participants {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .participants-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .participants-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .participants-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .participant-tag {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .participant-tag.advisor {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-secondary);
+        }
+
+        .participant-tag.advisor:hover { background: rgba(139, 92, 246, 0.25); }
+
+        .participant-tag.lender {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-primary);
+        }
+
+        .participant-tag.lender:hover { background: rgba(59, 130, 246, 0.25); }
+
+        /* Deal Notes */
+        .deal-notes {
+            background: var(--bg-card);
+            padding: 0.6rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .deal-notes strong { color: var(--accent-primary); }
+
+        /* Card Footer */
+        .deal-card-footer {
+            display: flex;
+            gap: 1rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        .deal-footer-link {
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .deal-footer-link:hover { text-decoration: underline; }
+
         /* Footer */
         .footer {
             margin-top: 5rem;
@@ -1029,6 +1652,8 @@
         .badge-boutique { background: var(--accent-secondary); color: white; }
         .badge-investment-bank { background: #059669; color: white; }
         .badge-legal { background: #7c3aed; color: white; }
+        .badge-lender { background: #0891b2; color: white; }
+        .badge-alt-lender { background: #dc2626; color: white; }
 
         .advisor-description {
             color: var(--text-secondary);
@@ -1130,7 +1755,7 @@
                 <h1 class="site-title">⚡ SportFin</h1>
                 <nav class="main-nav">
                     <button class="nav-button active" data-section="news">📰 Latest News</button>
-                    <button class="nav-button" data-section="market">📈 Market Activity</button>
+                    <button class="nav-button" data-section="deals">🎯 Deal Explorer</button>
                     <button class="nav-button" data-section="ownership">📊 Ownership Data</button>
                     <button class="nav-button" data-section="advisors">🤝 Service Providers</button>
                 </nav>
@@ -1737,109 +2362,162 @@
             </section>
         </div>
 
-        <!-- Market Activity Section -->
-        <div id="market" class="main-content">
-            <section class="market-section">
+        <!-- Deal Explorer Section -->
+        <div id="deals" class="main-content">
+            <section class="deals-section">
                 <div class="section-header">
-                    <h2 class="section-title">Market Activity & Deal Pipeline</h2>
+                    <h2 class="section-title">Deal Explorer</h2>
                     <span class="update-badge">Live Tracker</span>
                 </div>
 
-                <!-- Market Type Tabs -->
-                <div class="market-tabs">
-                    <button class="market-tab active" data-market-type="all">All Opportunities</button>
-                    <button class="market-tab" data-market-type="franchise-sale">Franchise Sales</button>
-                    <button class="market-tab" data-market-type="minority">Minority Stakes</button>
-                    <button class="market-tab" data-market-type="stadium">Stadium/Real Estate</button>
-                    <button class="market-tab" data-market-type="expansion">Expansion</button>
+                <!-- Filter Bar -->
+                <div class="deals-filter-bar">
+                    <div class="deals-filter-search">
+                        <span>🔍</span>
+                        <input type="text" id="deal-search" placeholder="Search teams, advisors, lenders...">
+                    </div>
+                    <div class="deals-status-tabs">
+                        <button class="deals-status-tab active" data-status="all">All</button>
+                        <button class="deals-status-tab" data-status="active"><span class="status-dot status-dot-active"></span>Active</button>
+                        <button class="deals-status-tab" data-status="exploring"><span class="status-dot status-dot-exploring"></span>Exploring</button>
+                        <button class="deals-status-tab" data-status="closed"><span class="status-dot status-dot-closed"></span>Closed</button>
+                    </div>
+                    <div class="deals-filter-dropdowns">
+                        <select class="deals-filter-select" id="deal-league-filter">
+                            <option value="all">All Leagues</option>
+                            <option value="nfl">NFL</option>
+                            <option value="nba">NBA</option>
+                            <option value="nhl">NHL</option>
+                            <option value="mlb">MLB</option>
+                            <option value="mls">MLS</option>
+                            <option value="epl">EPL</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select class="deals-filter-select" id="deal-type-filter">
+                            <option value="all">All Types</option>
+                            <option value="franchise-sale">Franchise Sale</option>
+                            <option value="minority">Minority Stake</option>
+                            <option value="stadium">Stadium</option>
+                            <option value="expansion">Expansion</option>
+                        </select>
+                    </div>
+                    <div class="deals-filter-results">
+                        <span id="deal-count">28 deals</span>
+                    </div>
                 </div>
 
-                <!-- Opportunity Cards Grid -->
-                <div class="opportunity-grid" id="opportunity-grid">
+                <!-- Deals Grid -->
+                <div class="deals-grid" id="deals-grid">
 
                     <!-- Boston Celtics - ACTIVE -->
-                    <div class="opportunity-card hot" data-market-type="franchise-sale">
-                        <div class="opportunity-header">
-                            <div>
-                                <div class="opportunity-title">Boston Celtics</div>
-                                <div class="opportunity-subtitle">NBA - Eastern Conference</div>
+                    <div class="deal-card hot" data-status="active" data-league="nba" data-type="franchise-sale">
+                        <div class="deal-card-header">
+                            <div class="deal-identity">
+                                <h3 class="deal-name">Boston Celtics</h3>
+                                <span class="deal-subtitle">NBA - Eastern Conference</span>
                             </div>
-                            <div class="opportunity-badges">
+                            <div class="deal-badges">
                                 <span class="status-badge badge-active">ACTIVE</span>
                                 <span class="news-league-badge badge-nba">NBA</span>
                             </div>
                         </div>
-                        <div class="opportunity-details">
-                            <div class="detail-row">
-                                <span class="detail-label">Est. Valuation</span>
-                                <span class="detail-value highlight">$6.1B</span>
+                        <div class="deal-valuation-banner">
+                            <span class="valuation-label">Valuation</span>
+                            <span class="valuation-amount">$6.1B</span>
+                            <span class="deal-type-tag">Majority Sale</span>
+                        </div>
+                        <div class="deal-details-grid">
+                            <div class="deal-detail-item">
+                                <span class="deal-detail-label">Seller</span>
+                                <span class="deal-detail-value">Wyc Grousbeck</span>
                             </div>
-                            <div class="detail-row">
-                                <span class="detail-label">Transaction Type</span>
-                                <span class="detail-value">Majority Sale</span>
+                            <div class="deal-detail-item">
+                                <span class="deal-detail-label">Buyer</span>
+                                <span class="deal-detail-value">Bill Chisholm Group</span>
                             </div>
-                            <div class="detail-row">
-                                <span class="detail-label">Current Owner</span>
-                                <span class="detail-value">Wyc Grousbeck</span>
+                            <div class="deal-detail-item">
+                                <span class="deal-detail-label">Timeline</span>
+                                <span class="deal-detail-value">Q2 2025 Close</span>
                             </div>
-                            <div class="detail-row">
-                                <span class="detail-label">Timeline</span>
-                                <span class="detail-value">Closing 2024-2028</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label">Financing Opportunity</span>
+                            <div class="deal-detail-item">
+                                <span class="deal-detail-label">Financing</span>
                                 <span class="financing-indicator financing-high">● High</span>
                             </div>
                         </div>
-                        <div class="opportunity-notes">
-                            <strong>Deal Notes:</strong> Record NBA sale. Phased transition with Grousbeck remaining governor through 2028. Buyer group led by private equity. Acquisition financing likely needed.
+                        <details class="deal-capital-structure">
+                            <summary><span>Capital Structure</span><span>▼</span></summary>
+                            <div class="capital-breakdown">
+                                <div class="capital-bar">
+                                    <div class="capital-segment debt" style="width: 28%;"></div>
+                                    <div class="capital-segment preferred" style="width: 10%;"></div>
+                                    <div class="capital-segment equity" style="width: 62%;"></div>
+                                </div>
+                                <div class="capital-legend">
+                                    <div class="legend-item"><span class="legend-color debt"></span><span>Debt: $1.5-2B</span></div>
+                                    <div class="legend-item"><span class="legend-color preferred"></span><span>Pref: $500M+</span></div>
+                                    <div class="legend-item"><span class="legend-color equity"></span><span>Equity: ~$3.6B</span></div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="deal-timeline-section">
+                            <summary><span>Deal Timeline</span><span class="milestone-progress">2/4</span></summary>
+                            <div class="timeline-track">
+                                <div class="deal-milestone completed">
+                                    <span class="milestone-marker"></span>
+                                    <div class="milestone-content">
+                                        <span class="milestone-date">Jul 2024</span>
+                                        <span class="milestone-event">Sale Announced</span>
+                                    </div>
+                                </div>
+                                <div class="deal-milestone completed">
+                                    <span class="milestone-marker"></span>
+                                    <div class="milestone-content">
+                                        <span class="milestone-date">Dec 2024</span>
+                                        <span class="milestone-event">Buyer Identified</span>
+                                    </div>
+                                </div>
+                                <div class="deal-milestone active">
+                                    <span class="milestone-marker"></span>
+                                    <div class="milestone-content">
+                                        <span class="milestone-date">Q1 2025</span>
+                                        <span class="milestone-event">Due Diligence</span>
+                                    </div>
+                                </div>
+                                <div class="deal-milestone upcoming">
+                                    <span class="milestone-marker"></span>
+                                    <div class="milestone-content">
+                                        <span class="milestone-date">Q2 2025</span>
+                                        <span class="milestone-event">Board Approval</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <div class="deal-participants">
+                            <div class="participants-group">
+                                <span class="participants-label">Advisors</span>
+                                <div class="participants-tags">
+                                    <span class="participant-tag advisor">Raine Group</span>
+                                    <span class="participant-tag advisor">Goldman Sachs</span>
+                                </div>
+                            </div>
+                            <div class="participants-group">
+                                <span class="participants-label">Lenders</span>
+                                <div class="participants-tags">
+                                    <span class="participant-tag lender">JPMorgan</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="financing-details">
-                            <h4>Capital Structure</h4>
-                            <div class="capital-stack">
-                                <div class="stack-item">
-                                    <span class="label">Senior Debt:</span>
-                                    <span class="value">$1.5-2B potential</span>
-                                </div>
-                                <div class="stack-item">
-                                    <span class="label">Preferred Equity:</span>
-                                    <span class="value">$500M+ available</span>
-                                </div>
-                                <div class="stack-item">
-                                    <span class="label">LP Co-Invest:</span>
-                                    <span class="value">Seeking partners</span>
-                                </div>
-                            </div>
-                            <div class="lending-opp">
-                                <span class="label">Lending Opportunity:</span>
-                                <span class="value high">High - Acquisition Financing</span>
-                            </div>
+                        <div class="deal-notes">
+                            <strong>Notes:</strong> Record NBA sale. Phased transition with Grousbeck remaining governor through 2028.
                         </div>
-                        <div class="deal-timeline">
-                            <h4>Key Milestones</h4>
-                            <div class="timeline-items">
-                                <div class="milestone completed">
-                                    <span class="date">Jul 2024</span>
-                                    <span class="event">Sale Announced</span>
-                                </div>
-                                <div class="milestone completed">
-                                    <span class="date">Dec 2024</span>
-                                    <span class="event">Buyer Group Identified</span>
-                                </div>
-                                <div class="milestone active">
-                                    <span class="date">Q1 2025</span>
-                                    <span class="event">NBA Due Diligence</span>
-                                </div>
-                                <div class="milestone upcoming">
-                                    <span class="date">Q2 2025</span>
-                                    <span class="event">Board Approval</span>
-                                </div>
-                            </div>
+                        <div class="deal-card-footer">
+                            <button class="deal-footer-link" onclick="document.querySelector('[data-section=ownership]').click(); setTimeout(() => document.querySelector('[data-league=nba]').click(), 100);">View Ownership →</button>
+                            <button class="deal-footer-link" onclick="document.querySelector('[data-section=advisors]').click();">View Advisors →</button>
                         </div>
                     </div>
 
                     <!-- New Orleans Saints - EXPLORING -->
-                    <div class="opportunity-card" data-market-type="franchise-sale">
+                    <div class="opportunity-card" data-status="exploring" data-league="nfl" data-type="franchise-sale">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">New Orleans Saints</div>
@@ -1878,7 +2556,7 @@
                     </div>
 
                     <!-- Portland Trail Blazers - ACTIVE -->
-                    <div class="opportunity-card hot" data-market-type="franchise-sale">
+                    <div class="opportunity-card hot" data-status="active" data-league="nba" data-type="franchise-sale">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Portland Trail Blazers</div>
@@ -1917,7 +2595,7 @@
                     </div>
 
                     <!-- NFL PE Minority Stakes - ACTIVE -->
-                    <div class="opportunity-card hot" data-market-type="minority">
+                    <div class="opportunity-card hot" data-status="active" data-league="nfl" data-type="minority">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">NFL Private Equity Stakes</div>
@@ -1956,7 +2634,7 @@
                     </div>
 
                     <!-- Miami Dolphins Minority - RUMORED -->
-                    <div class="opportunity-card" data-market-type="minority">
+                    <div class="opportunity-card" data-status="rumored" data-league="nfl" data-type="minority">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Miami Dolphins</div>
@@ -1995,7 +2673,7 @@
                     </div>
 
                     <!-- Las Vegas A's Stadium - ACTIVE -->
-                    <div class="opportunity-card hot" data-market-type="stadium">
+                    <div class="opportunity-card hot" data-status="active" data-league="mlb" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Las Vegas A's Stadium</div>
@@ -2034,7 +2712,7 @@
                     </div>
 
                     <!-- Buffalo Bills Stadium - ACTIVE -->
-                    <div class="opportunity-card" data-market-type="stadium">
+                    <div class="opportunity-card" data-status="active" data-league="nfl" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Buffalo Bills - Highmark Stadium</div>
@@ -2073,7 +2751,7 @@
                     </div>
 
                     <!-- Tennessee Titans Stadium - ACTIVE -->
-                    <div class="opportunity-card" data-market-type="stadium">
+                    <div class="opportunity-card" data-status="active" data-league="nfl" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Tennessee Titans - New Stadium</div>
@@ -2112,7 +2790,7 @@
                     </div>
 
                     <!-- MLS Phoenix Expansion - UPCOMING -->
-                    <div class="opportunity-card" data-market-type="expansion">
+                    <div class="opportunity-card" data-status="exploring" data-league="mls" data-type="expansion">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Phoenix MLS Expansion</div>
@@ -2151,7 +2829,7 @@
                     </div>
 
                     <!-- Alpine F1 - EXPLORING -->
-                    <div class="opportunity-card" data-market-type="franchise-sale">
+                    <div class="opportunity-card" data-status="exploring" data-league="f1" data-type="franchise-sale">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Alpine F1 Team</div>
@@ -2190,7 +2868,7 @@
                     </div>
 
                     <!-- NBA Expansion - UPCOMING -->
-                    <div class="opportunity-card" data-market-type="expansion">
+                    <div class="opportunity-card" data-status="exploring" data-league="nba" data-type="expansion">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">NBA Expansion (Seattle/Las Vegas)</div>
@@ -2271,7 +2949,7 @@
                     </div>
 
                     <!-- Intuit Dome - COMPLETED REFERENCE -->
-                    <div class="opportunity-card" data-market-type="stadium">
+                    <div class="opportunity-card" data-status="closed" data-league="nba" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">LA Clippers - Intuit Dome</div>
@@ -2306,7 +2984,7 @@
                     </div>
 
                     <!-- Tampa Bay Rays Stadium - ACTIVE -->
-                    <div class="opportunity-card hot" data-market-type="stadium">
+                    <div class="opportunity-card hot" data-status="active" data-league="mlb" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Tampa Bay Rays - New Stadium</div>
@@ -2383,7 +3061,7 @@
                     </div>
 
                     <!-- Kansas City Stadium Complex - EXPLORING -->
-                    <div class="opportunity-card" data-market-type="stadium">
+                    <div class="opportunity-card" data-status="exploring" data-league="nfl" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Kansas City Chiefs/Royals Stadium</div>
@@ -2422,7 +3100,7 @@
                     </div>
 
                     <!-- Chicago Bears Arlington - EXPLORING -->
-                    <div class="opportunity-card" data-market-type="stadium">
+                    <div class="opportunity-card" data-status="exploring" data-league="nfl" data-type="stadium">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Chicago Bears - Arlington Heights</div>
@@ -2460,8 +3138,47 @@
                         </div>
                     </div>
 
+                    <!-- Chicago Fire FC - Soccer-Specific Stadium -->
+                    <div class="opportunity-card" data-status="exploring" data-league="mls" data-type="stadium">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Chicago Fire FC - Soccer-Specific Stadium</div>
+                                <div class="opportunity-subtitle">MLS Stadium Development</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-exploring">EXPLORING</span>
+                                <span class="news-league-badge badge-mls">MLS</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Est. Project Value</span>
+                                <span class="detail-value highlight">$400-500M</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Owner</span>
+                                <span class="detail-value">Joe Mansueto (~$5.5B NW)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Current Venue</span>
+                                <span class="detail-value">Soldier Field (tenant)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Target Timeline</span>
+                                <span class="detail-value">2027-2028 Opening</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-high">● High</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Morningstar founder seeking dedicated SSS to compete with peers. Currently in site selection phase. Private financing likely required - minimal public funding expected. Strong ownership financial capacity.
+                        </div>
+                    </div>
+
                     <!-- Charlotte Hornets - Minority Stakes -->
-                    <div class="opportunity-card" data-market-type="minority">
+                    <div class="opportunity-card" data-status="active" data-league="nba" data-type="minority">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Charlotte Hornets</div>
@@ -2500,7 +3217,7 @@
                     </div>
 
                     <!-- Inter Milan - EXPLORING -->
-                    <div class="opportunity-card" data-market-type="franchise-sale">
+                    <div class="opportunity-card" data-status="exploring" data-league="other" data-type="franchise-sale">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">Inter Milan (FC Internazionale)</div>
@@ -2539,7 +3256,7 @@
                     </div>
 
                     <!-- NHL Team Sales - RUMORED -->
-                    <div class="opportunity-card" data-market-type="minority">
+                    <div class="opportunity-card" data-status="rumored" data-league="nhl" data-type="minority">
                         <div class="opportunity-header">
                             <div>
                                 <div class="opportunity-title">NHL Minority Stake Opportunities</div>
@@ -2598,6 +3315,7 @@
                     <button class="league-tab" data-league="milb">MiLB</button>
                     <button class="league-tab" data-league="f1">F1</button>
                     <button class="league-tab" data-league="sailgp">SailGP</button>
+                    <button class="league-tab" data-league="euro-football">European Football</button>
                 </div>
 
                 <!-- NFL Content -->
@@ -5535,6 +6253,248 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- European Football Content -->
+                <div id="euro-football" class="league-content">
+                    <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid var(--border-light); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 0.75rem;">📊 European Football - US/PE Ownership Expansion</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Growing market for Private Banking as US investors and PE funds enter European football. Key financing opportunities in acquisitions, stadium development, and media rights monetization.</p>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-controls">
+                            <div class="search-box">
+                                <span>🔍</span>
+                                <input type="text" placeholder="Search clubs or owners..." id="euro-football-search">
+                            </div>
+                            <div class="table-info">
+                                <span id="euro-football-count">20 clubs</span>
+                            </div>
+                        </div>
+                        <table class="data-table" id="euro-football-table">
+                            <thead>
+                                <tr>
+                                    <th>Club</th>
+                                    <th>League</th>
+                                    <th>Owner(s)</th>
+                                    <th>Owner Type</th>
+                                    <th>Est. Value</th>
+                                    <th>Acquired</th>
+                                    <th>Price Paid</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Premier League -->
+                                <tr>
+                                    <td class="team-name-cell">Manchester United</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Glazer Family / INEOS (25%)</td>
+                                    <td>US Family / UK PE</td>
+                                    <td class="net-worth-cell">$6.5B</td>
+                                    <td class="year-cell">2005 / 2024</td>
+                                    <td>$790M / $1.5B</td>
+                                    <td class="notes-cell">INEOS (Jim Ratcliffe) acquired 25% stake + football operations control. NYSE listed (MANU)</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Liverpool FC</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Fenway Sports Group</td>
+                                    <td>US Investment Group</td>
+                                    <td class="net-worth-cell">$5.4B</td>
+                                    <td class="year-cell">2010</td>
+                                    <td>£300M</td>
+                                    <td class="notes-cell">John Henry (Red Sox owner). Dynasty Equity sold minority stake 2023. Potential 2025 sale</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Chelsea FC</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Clearlake Capital / Todd Boehly</td>
+                                    <td>US PE / US Individual</td>
+                                    <td class="net-worth-cell">$5.2B</td>
+                                    <td class="year-cell">2022</td>
+                                    <td>£4.25B</td>
+                                    <td class="notes-cell">BlueCo consortium. Clearlake majority, Boehly controlling owner. Acquired from Abramovich</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Arsenal FC</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Stan Kroenke</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$4.3B</td>
+                                    <td class="year-cell">2018 (100%)</td>
+                                    <td>£550M (remaining 30%)</td>
+                                    <td class="notes-cell">Kroenke Sports & Entertainment. Also owns LA Rams, Denver Nuggets, Colorado Avalanche</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Aston Villa</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Nassef Sawiris / Wes Edens</td>
+                                    <td>Egyptian Billionaire / US (Fortress)</td>
+                                    <td class="net-worth-cell">$1.5B</td>
+                                    <td class="year-cell">2018</td>
+                                    <td>£76M</td>
+                                    <td class="notes-cell">Edens co-founded Fortress Investment. Also owns Milwaukee Bucks</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Fulham FC</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Shahid Khan</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$900M</td>
+                                    <td class="year-cell">2013</td>
+                                    <td>£150M</td>
+                                    <td class="notes-cell">Also owns Jacksonville Jaguars. Greenwich Advisory advised on acquisition</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Ipswich Town</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Gamechanger 20 Ltd (Bright Path)</td>
+                                    <td>US PE</td>
+                                    <td class="net-worth-cell">~$500M</td>
+                                    <td class="year-cell">2021</td>
+                                    <td>Undisclosed</td>
+                                    <td class="notes-cell">Ed Sheeran minority investor. Promoted to EPL 2024 after 22 years</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Crystal Palace</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">John Textor (45%) / Steve Parish</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$800M</td>
+                                    <td class="year-cell">2021</td>
+                                    <td>~$100M (for 40%)</td>
+                                    <td class="notes-cell">Textor also owns Lyon, Botafogo, RWD Molenbeek. Eagle Football Holdings</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Bournemouth</td>
+                                    <td>EPL</td>
+                                    <td class="owner-name-cell">Bill Foley</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$700M</td>
+                                    <td class="year-cell">2022</td>
+                                    <td>£120M</td>
+                                    <td class="notes-cell">Black Knight / Cannae Holdings. Also owns Vegas Golden Knights (NHL)</td>
+                                </tr>
+                                <!-- Serie A -->
+                                <tr>
+                                    <td class="team-name-cell">AC Milan</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">RedBird Capital Partners</td>
+                                    <td>US PE</td>
+                                    <td class="net-worth-cell">$1.3B</td>
+                                    <td class="year-cell">2022</td>
+                                    <td>€1.2B</td>
+                                    <td class="notes-cell">Gerry Cardinale. Yankees Global Enterprises minority stake. Elliott retained minority + €600M seller note</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Inter Milan</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">Oaktree Capital Management</td>
+                                    <td>US PE (Distressed)</td>
+                                    <td class="net-worth-cell">$1.2B</td>
+                                    <td class="year-cell">2024</td>
+                                    <td>€350M (debt)</td>
+                                    <td class="notes-cell">Acquired via loan default from Suning. Seeking new buyer. Won Serie A 2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">AS Roma</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">Dan Friedkin</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$800M</td>
+                                    <td class="year-cell">2020</td>
+                                    <td>€591M</td>
+                                    <td class="notes-cell">Friedkin Group (Gulf States Toyota). Also owns Everton FC (2024). Greenwich Advisory equity raise</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Atalanta BC</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">Stephen Pagliuca</td>
+                                    <td>US PE (Bain Capital)</td>
+                                    <td class="net-worth-cell">$600M</td>
+                                    <td class="year-cell">2022</td>
+                                    <td>Undisclosed (55%)</td>
+                                    <td class="notes-cell">Boston Celtics co-owner. Won Europa League 2024. Strong development model</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Parma Calcio</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">Kyle Krause</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$200M</td>
+                                    <td class="year-cell">2020</td>
+                                    <td>~€100M</td>
+                                    <td class="notes-cell">Krause Group (Kum & Go). Iowa-based. Promoted to Serie A 2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Genoa CFC</td>
+                                    <td>Serie A</td>
+                                    <td class="owner-name-cell">777 Partners</td>
+                                    <td>US PE</td>
+                                    <td class="net-worth-cell">$150M</td>
+                                    <td class="year-cell">2021</td>
+                                    <td>~€50M</td>
+                                    <td class="notes-cell">Multi-club ownership model. Also Standard Liège, Red Star Paris, Hertha Berlin (now divested)</td>
+                                </tr>
+                                <!-- La Liga -->
+                                <tr>
+                                    <td class="team-name-cell">FC Barcelona</td>
+                                    <td>La Liga</td>
+                                    <td class="owner-name-cell">Member-owned (Socio model)</td>
+                                    <td>Fan-owned</td>
+                                    <td class="net-worth-cell">$5.6B</td>
+                                    <td class="year-cell">N/A</td>
+                                    <td>N/A</td>
+                                    <td class="notes-cell">Sixth Street: €595M for 25% of La Liga TV rights (25 years). Heavy debt restructuring</td>
+                                </tr>
+                                <tr>
+                                    <td class="team-name-cell">Atlético Madrid</td>
+                                    <td>La Liga</td>
+                                    <td class="owner-name-cell">Ares Management (minority)</td>
+                                    <td>US PE</td>
+                                    <td class="net-worth-cell">$1.1B</td>
+                                    <td class="year-cell">2023</td>
+                                    <td>€180M (minority)</td>
+                                    <td class="notes-cell">Israeli billionaire Idan Ofer majority. Ares took minority stake for stadium/growth</td>
+                                </tr>
+                                <!-- Ligue 1 -->
+                                <tr>
+                                    <td class="team-name-cell">Olympique Lyon</td>
+                                    <td>Ligue 1</td>
+                                    <td class="owner-name-cell">John Textor (Eagle Football)</td>
+                                    <td>US Individual</td>
+                                    <td class="net-worth-cell">$500M</td>
+                                    <td class="year-cell">2022</td>
+                                    <td>~€600M</td>
+                                    <td class="notes-cell">Multi-club ownership: Crystal Palace, Botafogo, RWD Molenbeek. Financial difficulties 2024</td>
+                                </tr>
+                                <!-- Bundesliga -->
+                                <tr>
+                                    <td class="team-name-cell">Hertha Berlin</td>
+                                    <td>Bundesliga 2</td>
+                                    <td class="owner-name-cell">Lars Windhorst (Tennor)</td>
+                                    <td>German PE (now exiting)</td>
+                                    <td class="net-worth-cell">$250M</td>
+                                    <td class="year-cell">2019</td>
+                                    <td>€374M</td>
+                                    <td class="notes-cell">777 Partners divested. Club in crisis. 50+1 rule limits foreign control in Bundesliga</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin-top: 2rem;">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Key European Football Financing Notes</h4>
+                        <ul style="color: var(--text-secondary); margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>EPL:</strong> No restrictions on foreign ownership. Most valuable league globally. High debt capacity due to media rights.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Serie A:</strong> Historically undervalued, PE activity increasing. Stadium ownership opportunities (most clubs don't own stadiums).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>La Liga:</strong> Barcelona & Real Madrid member-owned. Other clubs open to investment. Sixth Street pioneered media rights financing.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Bundesliga:</strong> 50+1 rule limits outside control (fans must retain majority voting rights). RB Leipzig, Hoffenheim, Wolfsburg, Leverkusen exceptions.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Ligue 1:</strong> PSG (Qatar) dominates. Other clubs available. Collapse of domestic TV deal created distress opportunities.</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -5551,6 +6511,7 @@
                     <button class="advisor-tab active" data-advisor-type="all">All Advisors</button>
                     <button class="advisor-tab" data-advisor-type="boutique">Boutique Advisors</button>
                     <button class="advisor-tab" data-advisor-type="investment-bank">Investment Banks</button>
+                    <button class="advisor-tab" data-advisor-type="lender">Sports Lenders</button>
                     <button class="advisor-tab" data-advisor-type="legal">Legal Firms</button>
                 </div>
 
@@ -5665,6 +6626,76 @@
                             <div class="deal-item">
                                 <span class="deal-team">Various MLS Transactions</span>
                                 <span class="deal-value">Multiple</span>
+                                <span class="deal-role">Advisory</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Greenwich Advisory -->
+                    <div class="advisor-card" data-advisor-type="boutique">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Greenwich Advisory</h3>
+                            <span class="advisor-type-badge badge-boutique">Boutique</span>
+                        </div>
+                        <p class="advisor-description">Sports M&A advisory firm founded by Rick Perna, former Citigroup Sports Finance veteran with 25+ years experience. Specializes in team transactions, valuations, and financing advisory across major leagues and international football.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$10B+</span>
+                                <span class="stat-label">Deal Volume</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">40+</span>
+                                <span class="stat-label">Transactions</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Deals Advised</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Nashville Predators</span>
+                                <span class="deal-value">NHL</span>
+                                <span class="deal-role">Seller Side</span>
+                                <span class="deal-year">2024</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Detroit Pistons</span>
+                                <span class="deal-value">NBA</span>
+                                <span class="deal-role">Seller Side</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Fulham FC</span>
+                                <span class="deal-value">EPL</span>
+                                <span class="deal-role">Buyer Side</span>
+                                <span class="deal-year">2021</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Minnesota Wild</span>
+                                <span class="deal-value">NHL</span>
+                                <span class="deal-role">Buyer Side</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">LA Dodgers</span>
+                                <span class="deal-value">MLB</span>
+                                <span class="deal-role">Buyer Side</span>
+                                <span class="deal-year">2012</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">AS Roma</span>
+                                <span class="deal-value">Serie A</span>
+                                <span class="deal-role">Equity Raise</span>
+                                <span class="deal-year">2020</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Bologna FC</span>
+                                <span class="deal-value">Serie A</span>
+                                <span class="deal-role">Buyer Side</span>
+                                <span class="deal-year">2022</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">SailGP</span>
+                                <span class="deal-value">Racing</span>
                                 <span class="deal-role">Advisory</span>
                                 <span class="deal-year">Ongoing</span>
                             </div>
@@ -5863,6 +6894,278 @@
                                 <span class="deal-value">Multiple</span>
                                 <span class="deal-role">Legal Counsel</span>
                                 <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============ SPORTS LENDERS ============ -->
+
+                    <!-- JPMorgan Chase -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">JPMorgan Chase</h3>
+                            <span class="advisor-type-badge badge-lender">Bank Lender</span>
+                        </div>
+                        <p class="advisor-description">Leading sports lending bank with dedicated Sports Finance Group. Provides senior debt, acquisition financing, and stadium loans to major league teams and owners.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$15B+</span>
+                                <span class="stat-label">Sports Lending</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-label">Team Relationships</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Financing Deals</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Washington Commanders</span>
+                                <span class="deal-value">$1B+</span>
+                                <span class="deal-role">Acquisition Debt</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Multiple NFL Teams</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">Senior Lender</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Stadium Projects</span>
+                                <span class="deal-value">$5B+</span>
+                                <span class="deal-role">Lead Arranger</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goldman Sachs Lending -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Goldman Sachs (Lending)</h3>
+                            <span class="advisor-type-badge badge-lender">Bank Lender</span>
+                        </div>
+                        <p class="advisor-description">Global investment bank with active sports lending practice, providing acquisition financing, stadium debt, and structured credit facilities to team owners and PE investors.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$10B+</span>
+                                <span class="stat-label">Sports Lending</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Financing Deals</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Chelsea FC</span>
+                                <span class="deal-value">$800M</span>
+                                <span class="deal-role">Acquisition Debt</span>
+                                <span class="deal-year">2022</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">SoFi Stadium</span>
+                                <span class="deal-value">$1.6B</span>
+                                <span class="deal-role">Joint Lead</span>
+                                <span class="deal-year">2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bank of America -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Bank of America</h3>
+                            <span class="advisor-type-badge badge-lender">Bank Lender</span>
+                        </div>
+                        <p class="advisor-description">Major commercial bank with sports lending expertise, providing team acquisition financing, working capital facilities, and stadium/arena debt across major leagues.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$8B+</span>
+                                <span class="stat-label">Sports Lending</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Financing Deals</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Denver Broncos</span>
+                                <span class="deal-value">$1.2B</span>
+                                <span class="deal-role">Acquisition Debt</span>
+                                <span class="deal-year">2022</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Multiple MLB Teams</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">Senior Lender</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sixth Street -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Sixth Street</h3>
+                            <span class="advisor-type-badge badge-alt-lender">Alternative Lender</span>
+                        </div>
+                        <p class="advisor-description">Leading alternative asset manager with major sports lending portfolio. Pioneered NBA team financing through league-approved investment structure. Provides preferred equity and structured credit.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$5B+</span>
+                                <span class="stat-label">Sports AUM</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">10+</span>
+                                <span class="stat-label">Team Investments</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Sports Investments</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">San Antonio Spurs</span>
+                                <span class="deal-value">$500M+</span>
+                                <span class="deal-role">Preferred Equity</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">FC Barcelona</span>
+                                <span class="deal-value">€595M</span>
+                                <span class="deal-role">Media Rights</span>
+                                <span class="deal-year">2022</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Real Madrid</span>
+                                <span class="deal-value">€360M</span>
+                                <span class="deal-role">Stadium Financing</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ares Management -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Ares Management</h3>
+                            <span class="advisor-type-badge badge-alt-lender">Alternative Lender</span>
+                        </div>
+                        <p class="advisor-description">Global alternative investment manager with dedicated sports lending strategy. Provides preferred equity, structured credit, and minority stake financing to teams and owners.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$3B+</span>
+                                <span class="stat-label">Sports Lending</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Sports Investments</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Atlético Madrid</span>
+                                <span class="deal-value">€180M</span>
+                                <span class="deal-role">Minority Stake</span>
+                                <span class="deal-year">2023</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Multiple NBA Teams</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">Preferred Equity</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apollo Global Management -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Apollo Global Management</h3>
+                            <span class="advisor-type-badge badge-alt-lender">Alternative Lender</span>
+                        </div>
+                        <p class="advisor-description">Major alternative asset manager with sports lending capabilities. Athene insurance subsidiary also active in stadium financing and long-dated sports debt.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$2B+</span>
+                                <span class="stat-label">Sports Exposure</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Sports Investments</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Yahoo Sports</span>
+                                <span class="deal-value">Undisclosed</span>
+                                <span class="deal-role">Buyer</span>
+                                <span class="deal-year">2024</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Sports Media/Venues</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">Structured Credit</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blue Owl Capital -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Blue Owl Capital</h3>
+                            <span class="advisor-type-badge badge-alt-lender">Alternative Lender</span>
+                        </div>
+                        <p class="advisor-description">Alternative asset manager with growing sports lending book. Provides direct lending and GP financing solutions to sports-focused private equity funds and team owners.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$1B+</span>
+                                <span class="stat-label">Sports Lending</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Sports Investments</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Sports PE Fund Financing</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">GP Solutions</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Team Owner NAV Loans</span>
+                                <span class="deal-value">Various</span>
+                                <span class="deal-role">Direct Lending</span>
+                                <span class="deal-year">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arctos Sports Partners -->
+                    <div class="advisor-card" data-advisor-type="lender">
+                        <div class="advisor-header">
+                            <h3 class="advisor-name">Arctos Sports Partners</h3>
+                            <span class="advisor-type-badge badge-alt-lender">Alternative Lender</span>
+                        </div>
+                        <p class="advisor-description">Sports-focused private equity firm with $4B+ AUM across two funds. First PE firm approved for minority stakes across MLB, NBA, NHL, and MLS. Provides minority equity and preferred structures.</p>
+                        <div class="advisor-stats">
+                            <div class="stat">
+                                <span class="stat-value">$4B+</span>
+                                <span class="stat-label">Sports AUM</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">25+</span>
+                                <span class="stat-label">Team Stakes</span>
+                            </div>
+                        </div>
+                        <h4 class="deals-header">Notable Sports Investments</h4>
+                        <div class="deals-list">
+                            <div class="deal-item">
+                                <span class="deal-team">Golden State Warriors</span>
+                                <span class="deal-value">Minority</span>
+                                <span class="deal-role">LP Stake</span>
+                                <span class="deal-year">2021</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">Sacramento Kings</span>
+                                <span class="deal-value">Minority</span>
+                                <span class="deal-role">LP Stake</span>
+                                <span class="deal-year">2022</span>
+                            </div>
+                            <div class="deal-item">
+                                <span class="deal-team">LA Dodgers</span>
+                                <span class="deal-value">Minority</span>
+                                <span class="deal-role">LP Stake</span>
+                                <span class="deal-year">2022</span>
                             </div>
                         </div>
                     </div>
@@ -6161,6 +7464,71 @@
             });
         }
 
+        // Search functionality for European Football table
+        const euroFootballSearch = document.getElementById('euro-football-search');
+        const euroFootballTable = document.getElementById('euro-football-table');
+        const euroFootballCount = document.getElementById('euro-football-count');
+
+        if (euroFootballSearch) {
+            euroFootballSearch.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const rows = euroFootballTable.querySelectorAll('tbody tr');
+                let visibleCount = 0;
+
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                euroFootballCount.textContent = `${visibleCount} club${visibleCount !== 1 ? 's' : ''}`;
+            });
+        }
+
+        // Transaction History filtering
+        const txnLeagueFilter = document.getElementById('txn-league-filter');
+        const txnTypeFilter = document.getElementById('txn-type-filter');
+        const txnYearFilter = document.getElementById('txn-year-filter');
+        const txnTable = document.getElementById('transaction-table');
+        const txnCount = document.getElementById('txn-count');
+
+        function filterTransactions() {
+            const league = txnLeagueFilter.value;
+            const type = txnTypeFilter.value;
+            const year = txnYearFilter.value;
+            const rows = txnTable.querySelectorAll('tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const rowLeague = row.dataset.league;
+                const rowType = row.dataset.type;
+                const rowYear = row.dataset.year;
+
+                const matchLeague = league === 'all' || rowLeague === league;
+                const matchType = type === 'all' || rowType === type;
+                const matchYear = year === 'all' || rowYear === year;
+
+                if (matchLeague && matchType && matchYear) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            txnCount.textContent = `${visibleCount} transaction${visibleCount !== 1 ? 's' : ''}`;
+        }
+
+        if (txnLeagueFilter) {
+            txnLeagueFilter.addEventListener('change', filterTransactions);
+            txnTypeFilter.addEventListener('change', filterTransactions);
+            txnYearFilter.addEventListener('change', filterTransactions);
+        }
+
         // Advisor tab filtering
         const advisorTabs = document.querySelectorAll('.advisor-tab');
         const advisorCards = document.querySelectorAll('.advisor-card');
@@ -6306,6 +7674,124 @@
                 filterNewsCards();
             });
         }
+
+        // ==========================================
+        // DEAL EXPLORER FILTERING
+        // ==========================================
+
+        const dealSearch = document.getElementById('deal-search');
+        const dealStatusTabs = document.querySelectorAll('.deals-status-tab');
+        const dealLeagueFilter = document.getElementById('deal-league-filter');
+        const dealTypeFilter = document.getElementById('deal-type-filter');
+        const dealCountSpan = document.getElementById('deal-count');
+        const dealsGrid = document.getElementById('deals-grid');
+
+        // Current filter state
+        let dealFilters = {
+            search: '',
+            status: 'all',
+            league: 'all',
+            type: 'all'
+        };
+
+        // Get all deal cards (both new deal-card and legacy opportunity-card)
+        function getDealCards() {
+            return dealsGrid ? dealsGrid.querySelectorAll('.deal-card, .opportunity-card') : [];
+        }
+
+        // Extract status from card (check badge text)
+        function getCardStatus(card) {
+            const statusBadge = card.querySelector('.status-badge');
+            if (statusBadge) {
+                const text = statusBadge.textContent.toLowerCase();
+                if (text.includes('active')) return 'active';
+                if (text.includes('exploring')) return 'exploring';
+                if (text.includes('rumored') || text.includes('various')) return 'rumored';
+                if (text.includes('closed')) return 'closed';
+            }
+            return 'active'; // default
+        }
+
+        // Extract league from card (check badge text)
+        function getCardLeague(card) {
+            const leagueBadge = card.querySelector('.news-league-badge');
+            if (leagueBadge) {
+                const classes = leagueBadge.className;
+                if (classes.includes('badge-nfl')) return 'nfl';
+                if (classes.includes('badge-nba')) return 'nba';
+                if (classes.includes('badge-nhl')) return 'nhl';
+                if (classes.includes('badge-mlb')) return 'mlb';
+                if (classes.includes('badge-mls')) return 'mls';
+                if (classes.includes('badge-stadium')) return 'stadium';
+            }
+            return 'other';
+        }
+
+        // Filter deals based on current filter state
+        function filterDeals() {
+            const cards = getDealCards();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardStatus = card.dataset.status || getCardStatus(card);
+                const cardLeague = card.dataset.league || getCardLeague(card);
+                const cardType = card.dataset.type || card.dataset.marketType || 'other';
+                const cardText = card.textContent.toLowerCase();
+
+                const matchesStatus = dealFilters.status === 'all' || cardStatus === dealFilters.status;
+                const matchesLeague = dealFilters.league === 'all' || cardLeague === dealFilters.league;
+                const matchesType = dealFilters.type === 'all' || cardType === dealFilters.type;
+                const matchesSearch = dealFilters.search === '' || cardText.includes(dealFilters.search);
+
+                if (matchesStatus && matchesLeague && matchesType && matchesSearch) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (dealCountSpan) {
+                dealCountSpan.textContent = `${visibleCount} deal${visibleCount !== 1 ? 's' : ''}`;
+            }
+        }
+
+        // Status tabs
+        dealStatusTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                dealStatusTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                dealFilters.status = tab.dataset.status;
+                filterDeals();
+            });
+        });
+
+        // League dropdown
+        if (dealLeagueFilter) {
+            dealLeagueFilter.addEventListener('change', () => {
+                dealFilters.league = dealLeagueFilter.value;
+                filterDeals();
+            });
+        }
+
+        // Type dropdown
+        if (dealTypeFilter) {
+            dealTypeFilter.addEventListener('change', () => {
+                dealFilters.type = dealTypeFilter.value;
+                filterDeals();
+            });
+        }
+
+        // Search input
+        if (dealSearch) {
+            dealSearch.addEventListener('input', (e) => {
+                dealFilters.search = e.target.value.toLowerCase();
+                filterDeals();
+            });
+        }
+
+        // Initial count update
+        filterDeals();
     </script>
 </body>
 </html>
