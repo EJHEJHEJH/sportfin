@@ -227,6 +227,178 @@
             gap: 0.8rem;
         }
 
+        /* News Sources & Advisors */
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .news-sources, .news-advisors {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .source-label, .advisor-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .source-link {
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            padding: 0.2rem 0.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .source-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .advisor-tag {
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+            padding: 0.2rem 0.6rem;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Financing Details */
+        .financing-details {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+        }
+
+        .financing-details h4 {
+            font-size: 0.85rem;
+            color: var(--accent-success);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .capital-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+
+        .stack-item .label {
+            color: var(--text-muted);
+        }
+
+        .stack-item .value {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .lending-opp {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed rgba(16, 185, 129, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lending-opp .value.high {
+            color: var(--accent-success);
+            font-weight: 600;
+        }
+
+        .lending-opp .value.medium {
+            color: var(--accent-warning);
+            font-weight: 600;
+        }
+
+        /* Deal Timeline */
+        .deal-timeline {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+        }
+
+        .deal-timeline h4 {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+        }
+
+        .milestone::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .milestone.completed::before {
+            background: var(--accent-success);
+        }
+
+        .milestone.active::before {
+            background: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        .milestone.upcoming::before {
+            background: var(--bg-hover);
+            border: 2px solid var(--text-muted);
+        }
+
+        .milestone .date {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            min-width: 80px;
+        }
+
+        .milestone .event {
+            color: var(--text-primary);
+        }
+
+        .milestone.completed .event {
+            color: var(--text-secondary);
+        }
+
         /* Ownership Data Section */
         .ownership-section {
             margin: 2rem 0;
@@ -1014,7 +1186,17 @@
                         </div>
                         <h3 class="news-title">Trail Blazers Sold to Tom Dundon Group for $4.25B</h3>
                         <p class="news-summary">Carolina Hurricanes owner Tom Dundon leads ownership group to purchase Portland Trail Blazers from Paul Allen estate. Team staying in Portland. NBA approval expected March 2026.</p>
-                        <a href="#" class="news-link" onclick="event.preventDefault(); alert('Link to ownership data');">View team ownership →</a>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.theathletic.com" target="_blank" class="source-link">The Athletic</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Evercore</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Colts Ownership -->
@@ -1072,7 +1254,17 @@
                         </div>
                         <h3 class="news-title">Rubenstein Group Acquires Orioles for $1.725B</h3>
                         <p class="news-summary">Carlyle Group founder David Rubenstein leads ownership group in record-breaking purchase of Baltimore Orioles from Angelos family.</p>
-                        <a href="#" class="news-link" onclick="event.preventDefault(); document.querySelector('[data-section=ownership]').click(); document.querySelector('[data-league=mlb]').click();">View team ownership →</a>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.wsj.com" target="_blank" class="source-link">WSJ</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Galatioto Sports Partners</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- San Diego FC -->
@@ -1218,7 +1410,18 @@
                         </div>
                         <h3 class="news-title">Celtics Sale Closes at Record $6.1 Billion</h3>
                         <p class="news-summary">Boston Celtics sale to investor group led by private equity executives closes, setting new record for North American sports franchise value. Wyc Grousbeck to remain as governor through 2028.</p>
-                        <a href="#" class="news-link" onclick="event.preventDefault(); document.querySelector('[data-section=ownership]').click(); document.querySelector('[data-league=nba]').click();">View team ownership →</a>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.bostonglobe.com" target="_blank" class="source-link">Boston Globe</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Raine Group</span>
+                                <span class="advisor-tag">Goldman Sachs</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- NFL: Saints Rumor -->
@@ -1306,6 +1509,230 @@
                         <p class="news-summary">Howard Hughes Holdings announces $100M+ new stadium development for Las Vegas Aviators, Oakland A's Triple-A affiliate, as part of Summerlin community expansion.</p>
                         <a href="#" class="news-link" onclick="event.preventDefault(); document.querySelector('[data-section=ownership]').click(); document.querySelector('[data-league=milb]').click();">View MiLB ownership →</a>
                     </div>
+
+                    <!-- Charlotte Hornets Sale -->
+                    <div class="news-card" data-league="nba" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nba">NBA</span>
+                            <span class="news-date">Aug 2024</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$3B</span>
+                        </div>
+                        <h3 class="news-title">Michael Jordan Sells Hornets to Gabe Plotkin & Rick Schnall</h3>
+                        <p class="news-summary">NBA legend Michael Jordan sells majority stake in Charlotte Hornets at $3B valuation. Gabe Plotkin (Melvin Capital) and Rick Schnall lead new ownership group.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.espn.com" target="_blank" class="source-link">ESPN</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Raine Group</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commanders Closing -->
+                    <div class="news-card" data-league="nfl" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nfl">NFL</span>
+                            <span class="news-date">Jul 2024</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$6.05B</span>
+                        </div>
+                        <h3 class="news-title">Josh Harris Completes Record Commanders Acquisition</h3>
+                        <p class="news-summary">Josh Harris-led group completes $6.05B purchase of Washington Commanders from Dan Snyder. Most expensive U.S. sports franchise sale ever. Magic Johnson among minority investors.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.frontofficesports.com" target="_blank" class="source-link">Front Office Sports</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Raine Group</span>
+                                <span class="advisor-tag">Allen & Co</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tampa Bay Rays Stadium -->
+                    <div class="news-card" data-league="mlb" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-mlb">MLB</span>
+                            <span class="news-date">Jan 2025</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$1.3B</span>
+                        </div>
+                        <h3 class="news-title">Tampa Bay Rays New Stadium Approved in St. Petersburg</h3>
+                        <p class="news-summary">St. Petersburg City Council approves $1.3B new stadium for Tampa Bay Rays as part of Historic Gas Plant district redevelopment. Opening targeted for 2028.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                                <a href="https://www.tampabay.com" target="_blank" class="source-link">Tampa Bay Times</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Goldman Sachs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sixth Street NBA -->
+                    <div class="news-card" data-league="nba" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nba">NBA</span>
+                            <span class="news-date">Dec 2024</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                        </div>
+                        <h3 class="news-title">Sixth Street Expands NBA Investment Portfolio</h3>
+                        <p class="news-summary">Private equity firm Sixth Street adds additional NBA minority stakes to portfolio, now holding positions in Spurs, Warriors, and Sharks. Part of growing PE presence in sports.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.bloomberg.com" target="_blank" class="source-link">Bloomberg</a>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kansas City Stadium -->
+                    <div class="news-card" data-league="nfl" data-type="rumor">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nfl">NFL</span>
+                            <span class="news-date">Feb 2025</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">DEVELOPING</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$2B+</span>
+                        </div>
+                        <h3 class="news-title">Chiefs & Royals Explore Joint Stadium District</h3>
+                        <p class="news-summary">Kansas City Chiefs and Royals exploring options for new stadium district after Jackson County voters rejected sales tax extension. Kansas offering incentives for relocation.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.kansascity.com" target="_blank" class="source-link">KC Star</a>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chicago Bears Arlington -->
+                    <div class="news-card" data-league="nfl" data-type="rumor">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nfl">NFL</span>
+                            <span class="news-date">Jan 2025</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">DEVELOPING</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$4.7B</span>
+                        </div>
+                        <h3 class="news-title">Bears Arlington Heights Project Moves Forward</h3>
+                        <p class="news-summary">Chicago Bears continue negotiations for $4.7B enclosed stadium and mixed-use development at Arlington Park site. Illinois legislature considering funding package.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.chicagotribune.com" target="_blank" class="source-link">Chicago Tribune</a>
+                                <a href="https://www.frontofficesports.com" target="_blank" class="source-link">Front Office Sports</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phoenix Suns Minority -->
+                    <div class="news-card" data-league="nba" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nba">NBA</span>
+                            <span class="news-date">Nov 2024</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                        </div>
+                        <h3 class="news-title">Suns Sell Additional Minority Stakes to Blue Owl</h3>
+                        <p class="news-summary">Mat Ishbia's Phoenix Suns sell additional minority equity tranches to Blue Owl Capital and other investors, part of ongoing capital structure optimization following 2023 acquisition.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                            </div>
+                            <div class="news-advisors">
+                                <span class="advisor-label">Advisors:</span>
+                                <span class="advisor-tag">Blue Owl Capital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NBA Expansion -->
+                    <div class="news-card" data-league="nba" data-type="rumor">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-nba">NBA</span>
+                            <span class="news-date">Feb 2025</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">DEVELOPING</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">$4B+ each</span>
+                        </div>
+                        <h3 class="news-title">NBA Expansion Committee Evaluating Seattle & Las Vegas</h3>
+                        <p class="news-summary">NBA expansion committee continues evaluation of Seattle and Las Vegas as leading candidates. Expansion fees expected to exceed $4B per franchise. Decision possible by 2025 All-Star break.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.espn.com" target="_blank" class="source-link">ESPN</a>
+                                <a href="https://www.theathletic.com" target="_blank" class="source-link">The Athletic</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arctos Expansion -->
+                    <div class="news-card" data-league="general" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-general">MULTI-SPORT</span>
+                            <span class="news-date">Jan 2025</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                        </div>
+                        <h3 class="news-title">Arctos Raises $4.1B for New Sports Investment Fund</h3>
+                        <p class="news-summary">Arctos Sports Partners closes Fund III at $4.1B, largest dedicated sports private equity fund ever. Firm now has stakes in 30+ teams across NBA, NHL, MLB, MLS, and European soccer.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.bloomberg.com" target="_blank" class="source-link">Bloomberg</a>
+                                <a href="https://www.sportico.com" target="_blank" class="source-link">Sportico</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inter Milan Oaktree -->
+                    <div class="news-card" data-league="general" data-type="confirmed">
+                        <div class="news-card-header">
+                            <span class="news-league-badge badge-general">SOCCER</span>
+                            <span class="news-date">May 2024</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <span style="background: var(--accent-success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CONFIRMED</span>
+                            <span style="background: var(--accent-warning); color: var(--bg-primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">€1B+</span>
+                        </div>
+                        <h3 class="news-title">Oaktree Takes Control of Inter Milan</h3>
+                        <p class="news-summary">Oaktree Capital takes ownership of Inter Milan after previous owner Suning defaults on €395M loan. American PE firm now controls Serie A champions, valued at €1B+.</p>
+                        <div class="news-meta">
+                            <div class="news-sources">
+                                <span class="source-label">Sources:</span>
+                                <a href="https://www.bloomberg.com" target="_blank" class="source-link">Bloomberg</a>
+                                <a href="https://www.ft.com" target="_blank" class="source-link">Financial Times</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -1366,6 +1793,48 @@
                         </div>
                         <div class="opportunity-notes">
                             <strong>Deal Notes:</strong> Record NBA sale. Phased transition with Grousbeck remaining governor through 2028. Buyer group led by private equity. Acquisition financing likely needed.
+                        </div>
+                        <div class="financing-details">
+                            <h4>Capital Structure</h4>
+                            <div class="capital-stack">
+                                <div class="stack-item">
+                                    <span class="label">Senior Debt:</span>
+                                    <span class="value">$1.5-2B potential</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">Preferred Equity:</span>
+                                    <span class="value">$500M+ available</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">LP Co-Invest:</span>
+                                    <span class="value">Seeking partners</span>
+                                </div>
+                            </div>
+                            <div class="lending-opp">
+                                <span class="label">Lending Opportunity:</span>
+                                <span class="value high">High - Acquisition Financing</span>
+                            </div>
+                        </div>
+                        <div class="deal-timeline">
+                            <h4>Key Milestones</h4>
+                            <div class="timeline-items">
+                                <div class="milestone completed">
+                                    <span class="date">Jul 2024</span>
+                                    <span class="event">Sale Announced</span>
+                                </div>
+                                <div class="milestone completed">
+                                    <span class="date">Dec 2024</span>
+                                    <span class="event">Buyer Group Identified</span>
+                                </div>
+                                <div class="milestone active">
+                                    <span class="date">Q1 2025</span>
+                                    <span class="event">NBA Due Diligence</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">Q2 2025</span>
+                                    <span class="event">Board Approval</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1757,6 +2226,48 @@
                         <div class="opportunity-notes">
                             <strong>Deal Notes:</strong> Adam Silver has indicated expansion likely after new media deal (2025-26). Two teams expected. Combined capital need could exceed $10B including arenas.
                         </div>
+                        <div class="financing-details">
+                            <h4>Est. Capital Requirements (Per Team)</h4>
+                            <div class="capital-stack">
+                                <div class="stack-item">
+                                    <span class="label">Expansion Fee:</span>
+                                    <span class="value">$4B+</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">Arena Cost:</span>
+                                    <span class="value">$1.5-2B</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">Working Capital:</span>
+                                    <span class="value">$200-300M</span>
+                                </div>
+                            </div>
+                            <div class="lending-opp">
+                                <span class="label">Total Capital Need:</span>
+                                <span class="value high">$6B+ per franchise</span>
+                            </div>
+                        </div>
+                        <div class="deal-timeline">
+                            <h4>Expected Timeline</h4>
+                            <div class="timeline-items">
+                                <div class="milestone active">
+                                    <span class="date">2025</span>
+                                    <span class="event">Expansion Committee Review</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">2025-26</span>
+                                    <span class="event">Ownership Groups Selected</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">2027</span>
+                                    <span class="event">Arena Groundbreaking</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">2028</span>
+                                    <span class="event">First Season</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Intuit Dome - COMPLETED REFERENCE -->
@@ -1791,6 +2302,278 @@
                         </div>
                         <div class="opportunity-notes">
                             <strong>Deal Notes:</strong> Steve Ballmer self-funded entirely. Sets benchmark for privately-financed arenas. Inglewood location with adjacent development.
+                        </div>
+                    </div>
+
+                    <!-- Tampa Bay Rays Stadium - ACTIVE -->
+                    <div class="opportunity-card hot" data-market-type="stadium">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Tampa Bay Rays - New Stadium</div>
+                                <div class="opportunity-subtitle">MLB Stadium Development</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-active">ACTIVE</span>
+                                <span class="news-league-badge badge-mlb">MLB</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Project Value</span>
+                                <span class="detail-value highlight">$1.3B</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">Stadium + Mixed-Use</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Public Funding</span>
+                                <span class="detail-value">$600M (City/County)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Private Share</span>
+                                <span class="detail-value">$700M (Rays + Development)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-high">● High</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Historic Gas Plant district redevelopment approved. Stadium + $5B mixed-use project. Opening 2028. Significant construction and development financing needed.
+                        </div>
+                        <div class="financing-details">
+                            <h4>Capital Structure</h4>
+                            <div class="capital-stack">
+                                <div class="stack-item">
+                                    <span class="label">Construction Loan:</span>
+                                    <span class="value">$400-500M needed</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">Muni Bonds:</span>
+                                    <span class="value">$600M (City/County)</span>
+                                </div>
+                                <div class="stack-item">
+                                    <span class="label">Development Financing:</span>
+                                    <span class="value">$2B+ for mixed-use</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deal-timeline">
+                            <h4>Key Milestones</h4>
+                            <div class="timeline-items">
+                                <div class="milestone completed">
+                                    <span class="date">Jan 2025</span>
+                                    <span class="event">City Council Approval</span>
+                                </div>
+                                <div class="milestone active">
+                                    <span class="date">Q2 2025</span>
+                                    <span class="event">Financing Finalized</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">Q4 2025</span>
+                                    <span class="event">Construction Begins</span>
+                                </div>
+                                <div class="milestone upcoming">
+                                    <span class="date">2028</span>
+                                    <span class="event">Stadium Opens</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kansas City Stadium Complex - EXPLORING -->
+                    <div class="opportunity-card" data-market-type="stadium">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Kansas City Chiefs/Royals Stadium</div>
+                                <div class="opportunity-subtitle">NFL/MLB Stadium Complex</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-exploring">EXPLORING</span>
+                                <span class="news-league-badge badge-nfl">NFL</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Est. Project Value</span>
+                                <span class="detail-value highlight">$2B+</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">New Stadium/Renovation</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Current Status</span>
+                                <span class="detail-value">Site Selection</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Public Funding</span>
+                                <span class="detail-value">TBD - Kansas competing</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-high">● High</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Jackson County sales tax rejected April 2024. Kansas offering STAR bonds + tax incentives for relocation. Hunt family (Chiefs) and Sherman (Royals) exploring options.
+                        </div>
+                    </div>
+
+                    <!-- Chicago Bears Arlington - EXPLORING -->
+                    <div class="opportunity-card" data-market-type="stadium">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Chicago Bears - Arlington Heights</div>
+                                <div class="opportunity-subtitle">NFL Stadium + Development</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-exploring">EXPLORING</span>
+                                <span class="news-league-badge badge-nfl">NFL</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Project Value</span>
+                                <span class="detail-value highlight">$4.7B</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">Stadium + 326-acre Dev</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Public Ask</span>
+                                <span class="detail-value">$2.8B (State)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Private Share</span>
+                                <span class="detail-value">$1.9B (McCaskey family)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-high">● High</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Largest stadium project ever proposed. Enclosed dome + entertainment district. Illinois legislature considering funding. Alternative: Soldier Field renovation.
+                        </div>
+                    </div>
+
+                    <!-- Charlotte Hornets - Minority Stakes -->
+                    <div class="opportunity-card" data-market-type="minority">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Charlotte Hornets</div>
+                                <div class="opportunity-subtitle">NBA - Eastern Conference</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-active">ACTIVE</span>
+                                <span class="news-league-badge badge-nba">NBA</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Team Valuation</span>
+                                <span class="detail-value highlight">$3B</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">Minority Stakes Available</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">New Owners</span>
+                                <span class="detail-value">Plotkin/Schnall Group</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Stakes Available</span>
+                                <span class="detail-value">LP positions open</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-medium">● Medium</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Post-Jordan sale, new ownership seeking additional minority investors. Minimum investment ~$50M. Spectrum Center lease through 2030.
+                        </div>
+                    </div>
+
+                    <!-- Inter Milan - EXPLORING -->
+                    <div class="opportunity-card" data-market-type="franchise-sale">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">Inter Milan (FC Internazionale)</div>
+                                <div class="opportunity-subtitle">Serie A - Italy</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-exploring">EXPLORING</span>
+                                <span class="news-league-badge badge-general">SOCCER</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Est. Valuation</span>
+                                <span class="detail-value highlight">€1.2B+</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">Potential Sale</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Current Owner</span>
+                                <span class="detail-value">Oaktree Capital</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Timeline</span>
+                                <span class="detail-value">2025-2026</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-high">● High</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> Oaktree took control May 2024 after Suning default. PE firm typically exits within 3-5 years. New stadium project could increase value. Serie A champions.
+                        </div>
+                    </div>
+
+                    <!-- NHL Team Sales - RUMORED -->
+                    <div class="opportunity-card" data-market-type="minority">
+                        <div class="opportunity-header">
+                            <div>
+                                <div class="opportunity-title">NHL Minority Stake Opportunities</div>
+                                <div class="opportunity-subtitle">Multiple Teams</div>
+                            </div>
+                            <div class="opportunity-badges">
+                                <span class="status-badge badge-rumored">VARIOUS</span>
+                                <span class="news-league-badge badge-nhl">NHL</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Team Values</span>
+                                <span class="detail-value highlight">$700M - $2.5B</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction Type</span>
+                                <span class="detail-value">Minority LP Stakes</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">PE Approved</span>
+                                <span class="detail-value">Yes - Up to 30%</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Active Firms</span>
+                                <span class="detail-value">Arctos, Sixth Street</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Financing Opportunity</span>
+                                <span class="financing-indicator financing-medium">● Medium</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-notes">
+                            <strong>Deal Notes:</strong> NHL approved PE ownership in 2021. Multiple teams seeking capital for arena upgrades, operations. Typical minimums $25-50M.
                         </div>
                     </div>
 
